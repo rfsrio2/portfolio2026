@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robson Silva | 3D Generalist & AI Specialist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Space Grotesk & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#403D39',       /* Charcoal Brown */
+                            darker: '#252422',     /* Carbon Black */
+                            card: '#32302E',       /* Blended warm dark card */
+                            primary: '#EB5228',    /* Spicy Paprika */
+                            secondary: '#CCC5B9',  /* Silver */
+                            accent: '#FFFCF2',     /* Floral White */
+                            textMuted: '#CCC5B9'
+                        }
+                    },
+                    boxShadow: {
+                        'neon-paprika': '0 0 15px rgba(235, 82, 40, 0.35)',
+                        'neon-accent': '0 0 20px rgba(255, 252, 242, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Scrollbar customizada combinando com Rustic Charm */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #252422;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #403D39;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EB5228;
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(235, 82, 40, 0.4);
+        }
+        /* Antes/Depois Wipe container */
+        .slider-image {
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-brand-darker text-brand-accent font-sans selection:bg-brand-primary selection:text-brand-darker overflow-x-hidden">
+
+    <header class="fixed top-0 w-full z-50 bg-brand-darker/90 backdrop-blur-md border-b border-brand-dark/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo (Pure Name Focus) -->
+            <a href="#" class="flex items-center space-x-2">
+                <span class="font-display font-bold text-2xl tracking-tight text-brand-accent">
+                    ROBSON<span class="text-brand-primary text-glow">.SILVA</span>
+                </span>
+                <span class="h-5 w-[1px] bg-brand-dark hidden sm:inline-block"></span>
+                <span class="text-xs text-brand-textMuted tracking-widest uppercase hidden sm:inline-block font-display font-semibold">3D GENERALIST</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#sobre" class="text-brand-textMuted hover:text-brand-primary transition-colors">Sobre Mim</a>
+                <a href="#showcase" class="text-brand-textMuted hover:text-brand-primary transition-colors">Antes & Depois</a>
+                <a href="#portfolio" class="text-brand-textMuted hover:text-brand-primary transition-colors">Portfólio</a>
+                <a href="#pipeline" class="text-brand-textMuted hover:text-brand-primary transition-colors">Pipeline IA</a>
+                <a href="#contato" class="text-brand-textMuted hover:text-brand-primary transition-colors">Contato</a>
+            </nav>
+
+            <!-- Social and CTA Actions -->
+            <div class="flex items-center space-x-4">
+                <a href="https://linkedin.com/in/rfsrio" target="_blank" class="text-brand-textMuted hover:text-brand-primary text-lg transition-colors" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://rfsrio.artstation.com" target="_blank" class="text-brand-textMuted hover:text-brand-primary text-lg transition-colors" title="ArtStation">
+                    <i class="fab fa-artstation"></i>
+                </a>
+                <a href="#contato" class="hidden sm:inline-flex items-center px-4 py-2 text-xs font-bold font-display uppercase tracking-wider text-brand-accent bg-brand-primary rounded hover:bg-white hover:text-brand-darker hover:shadow-neon-paprika transition-all duration-300">
+                    Iniciar Projeto
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-brand-accent hover:text-brand-primary focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-brand-darker/60 px-4 py-4 space-y-3 transition-all duration-300">
+            <a href="#sobre" class="block text-brand-textMuted hover:text-brand-primary text-base py-2 font-medium">Sobre Mim</a>
+            <a href="#showcase" class="block text-brand-textMuted hover:text-brand-primary text-base py-2 font-medium">Antes & Depois</a>
+            <a href="#portfolio" class="block text-brand-textMuted hover:text-brand-primary text-base py-2 font-medium">Portfólio</a>
+            <a href="#pipeline" class="block text-brand-textMuted hover:text-brand-primary text-base py-2 font-medium">Pipeline IA</a>
+            <a href="#contato" class="block text-brand-textMuted hover:text-brand-primary text-base py-2 font-medium">Contato</a>
+            <a href="#contato" class="block w-full text-center py-2 text-xs font-bold font-display uppercase tracking-wider text-brand-darker bg-brand-primary rounded">
+                Iniciar Projeto
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section with Custom Canvas Background aligned with Warm Earth Tone -->
+        <section id="hero" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16">
+            <!-- Canvas for Interactive Tech Particles with Rustic Color Theme -->
+            <canvas id="hero-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-40"></canvas>
+            
+            <!-- Tech Grid Overlay (Warm Theme Integration) -->
+            <div class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#403d39_1px,transparent_1px),linear-gradient(to_bottom,#403d39_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
+
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Tagline Badge -->
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-semibold tracking-wider uppercase mb-6 shadow-neon-paprika/20 animate-pulse">
+                    <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
+                    20 Anos de Fotorrealismo e Inovação 3D
+                </div>
+
+                <!-- Headline -->
+                <h1 class="font-display font-bold text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-tight mb-6">
+                    A Precisão do <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent">Fotorrealismo</span>.<br>
+                    O Futuro Guiado por <span class="text-brand-primary text-glow font-display">IA</span>.
+                </h1>
+
+                <!-- Short Bio Pitch -->
+                <p class="text-lg sm:text-xl text-brand-textMuted max-w-3xl mx-auto font-light mb-10 leading-relaxed">
+                    Duas décadas refinando a excelência visual em CGI industrial, ArchViz de alto padrão e animações aeroespaciais. Hoje, conectando a solidez clássica com o poder ágil dos pipelines híbridos de Inteligência Artificial.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 text-sm font-bold font-display uppercase tracking-wider text-brand-darker bg-brand-primary rounded hover:bg-white hover:text-brand-darker hover:shadow-neon-paprika transition-all duration-300 flex items-center justify-center gap-2">
+                        Explorar Portfólio <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="#showcase" class="w-full sm:w-auto px-8 py-4 text-sm font-bold font-display uppercase tracking-wider text-brand-accent bg-brand-dark border border-brand-secondary/30 rounded hover:bg-brand-darker transition-all duration-300 flex items-center justify-center gap-2">
+                        Ver WIP (Antes/Depois) <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </a>
+                </div>
+
+                <!-- Fast Statistics Counter -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-brand-dark/40 max-w-4xl mx-auto">
+                    <div>
+                        <div class="font-display text-3xl sm:text-4xl font-bold text-brand-accent text-glow">20+</div>
+                        <div class="text-xs text-brand-textMuted uppercase mt-1">Anos de Carreira</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl sm:text-4xl font-bold text-brand-primary">90%</div>
+                        <div class="text-xs text-brand-textMuted uppercase mt-1">Redução Custo Estúdio</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl sm:text-4xl font-bold text-brand-secondary">100%</div>
+                        <div class="text-xs text-brand-textMuted uppercase mt-1">Controle de Pipeline</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl sm:text-4xl font-bold text-brand-primary">Híbrido</div>
+                        <div class="text-xs text-brand-textMuted uppercase mt-1">3D Clássico + IA</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Mim (Storytelling) Section -->
+        <section id="sobre" class="py-24 bg-brand-dark border-t border-brand-darker">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Content Column (Left) -->
+                    <div class="lg:col-span-7">
+                        <div class="text-brand-primary font-display font-semibold text-sm tracking-widest uppercase mb-2">Pioneirismo & Evolução</div>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-accent mb-6">
+                            Robson Silva
+                        </h2>
+                        
+                        <div class="space-y-4 text-brand-textMuted leading-relaxed">
+                            <p>
+                                Minha jornada acompanha a própria evolução da computação gráfica no Brasil. Comecei refinando o fotorrealismo clássico e a iluminação de estúdio para grandes marcas de consumo e incorporadoras imobiliárias.
+                            </p>
+                            <p>
+                                Hoje, unifico essa base técnica sólida de engenharia e renderização com pipelines modernos de renderização em tempo real e inteligência artificial generativa aplicada ao movimento.
+                            </p>
+                            <p>
+                                Transito com naturalidade entre a engenharia de precisão para visualizações aeroespaciais (como o programa <strong class="text-brand-accent">B2SPACE</strong>) e o apelo estético ultra-realista necessário para converter vendas no setor de eletrodomésticos (<strong class="text-brand-accent">Philco & Britânia</strong>) e arquitetura premium (<strong class="text-brand-accent">Mozak</strong>).
+                            </p>
+                        </div>
+
+                        <!-- Highlights list -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded bg-brand-primary/10 flex items-center justify-center text-brand-primary shrink-0">
+                                    <i class="fa-solid fa-cube"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-brand-accent font-medium text-sm">Autonomia Completa</h4>
+                                    <p class="text-xs text-brand-textMuted">Da modelagem hard-surface à pós-produção complexa.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded bg-brand-primary/10 flex items-center justify-center text-brand-primary shrink-0">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-brand-accent font-medium text-sm">IA Consistente</h4>
+                                    <p class="text-xs text-brand-textMuted">Controle de câmera e consistência temporal guiada por 3D.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Dashboard Column (Right) -->
+                    <div class="lg:col-span-5 bg-brand-card p-6 rounded-2xl border border-brand-dark">
+                        <h3 class="font-display font-bold text-lg text-brand-accent mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-layer-group text-brand-primary"></i> Ferramental de Domínio
+                        </h3>
+
+                        <!-- Tool Groups -->
+                        <div class="space-y-6">
+                            <!-- 3D & Render -->
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold uppercase tracking-wider text-brand-secondary mb-2">
+                                    <span>3D & Renderizadores Clássicos</span>
+                                    <span class="text-brand-primary">Modelagem e Luz</span>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-brand-darker rounded text-xs text-brand-secondary border border-brand-dark">3ds Max</span>
+                                    <span class="px-3 py-1 bg-brand-darker rounded text-xs text-brand-secondary border border-brand-dark">Corona Renderer</span>
+                                    <span class="px-3 py-1 bg-brand-darker rounded text-xs text-brand-secondary border border-brand-dark">V-Ray</span>
+                                    <span class="px-3 py-1 bg-brand-darker rounded text-xs text-brand-secondary border border-brand-dark">Blender</span>
+                                    <span class="px-3 py-1 bg-brand-darker rounded text-xs text-brand-secondary border border-brand-dark">Unreal Engine</span>
+                                </div>
+                            </div>
+
+                            <!-- Motion & Comp -->
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold uppercase tracking-wider text-brand-secondary mb-2">
+                                    <span>Composição & Motion</span>
+                                    <span class="text-brand-primary">Pós-Produção</span>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-brand-darker rounded text-xs text-brand-secondary border border-brand-dark">After Effects</span>
+                                    <span class="px-3 py-1 bg-brand-darker rounded text-xs text-brand-secondary border border-brand-dark">Premiere Pro</span>
+                                    <span class="px-3 py-1 bg-brand-darker rounded text-xs text-brand-secondary border border-brand-dark">Photoshop</span>
+                                    <span class="px-3 py-1 bg-brand-darker rounded text-xs text-brand-secondary border border-brand-dark">DaVinci Resolve</span>
+                                </div>
+                            </div>
+
+                            <!-- Generative AI -->
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold uppercase tracking-wider text-brand-secondary mb-2">
+                                    <span>Inovação & IA Híbrida</span>
+                                    <span class="text-brand-primary">Próxima Fronteira</span>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-brand-primary/20 border border-brand-primary/30 rounded text-xs text-brand-accent">Stable Diffusion (ControlNet)</span>
+                                    <span class="px-3 py-1 bg-brand-primary/20 border border-brand-primary/30 rounded text-xs text-brand-accent">Midjourney</span>
+                                    <span class="px-3 py-1 bg-brand-primary/20 border border-brand-primary/30 rounded text-xs text-brand-accent">Runway Gen-2/3</span>
+                                    <span class="px-3 py-1 bg-brand-primary/20 border border-brand-primary/30 rounded text-xs text-brand-accent">Luma Dream Machine</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA to LinkedIn -->
+                        <div class="mt-8 pt-6 border-t border-brand-darker text-center">
+                            <p class="text-xs text-brand-textMuted mb-3">Interessado no currículo e portfólio completo?</p>
+                            <a href="https://linkedin.com/in/rfsrio" target="_blank" class="inline-flex items-center gap-2 text-sm text-brand-primary hover:text-brand-accent transition-colors">
+                                <i class="fa-solid fa-file-pdf"></i> Ver Histórico no LinkedIn <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Showroom (Before/After) Section with locked width sync fix -->
+        <section id="showcase" class="py-24 bg-brand-darker relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="text-brand-primary font-display font-semibold text-sm tracking-widest uppercase mb-2">Demonstração de Processo</div>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-accent">
+                        O Segredo do Fotorrealismo: Render vs. Clay
+                    </h2>
+                    <p class="text-brand-textMuted mt-4">
+                        Arraste o cursor deslizante para revelar a malha 3D ("Clay/Wireframe") por baixo da imagem final. Essa técnica demonstra que o produto final é inteiramente tridimensional e matematicamente preciso, ideal para embalagens e campanhas antes de saírem de fábrica.
+                    </p>
+                </div>
+
+                <!-- Custom Slider Widget with locked width container -->
+                <div id="showcase-container" class="relative w-full max-w-4xl mx-auto aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border border-brand-dark select-none">
+                    
+                    <!-- Under Image Layer (Clay/Wireframe) - Always full width of container, never squished -->
+                    <div class="absolute inset-0 bg-brand-dark/95 flex flex-col items-center justify-center p-8 text-center">
+                        <i class="fa-solid fa-border-none text-brand-textMuted text-5xl mb-4 opacity-50"></i>
+                        <div class="font-display text-xl text-brand-secondary font-bold mb-2">Modelo Wireframe / Clay</div>
+                        <p class="text-xs text-brand-textMuted max-w-md">Estrutura puramente digital contendo milhares de polígonos perfeitamente distribuídos, garantindo encaixes milimétricos e iluminação física real.</p>
+                        <div class="mt-4 px-3 py-1 bg-brand-darker text-[10px] text-brand-secondary font-mono rounded border border-brand-dark">CLAY RENDER PASS</div>
+                    </div>
+
+                    <!-- Top Image Layer (Finished Render) - Slide/Reveal using clipped overflow-hidden container -->
+                    <div id="slider-top-layer" class="absolute inset-0 overflow-hidden z-10 border-r border-brand-primary" style="width: 50%;">
+                        
+                        <!-- Top Layer Inner: Width will be dynamically synchronized with showcase-container's exact width via JS -->
+                        <div id="top-layer-inner" class="h-full bg-brand-darker/95 flex flex-col items-center justify-center p-8 text-center text-brand-primary" style="width: 100%;">
+                            <i class="fa-solid fa-cube text-brand-primary text-5xl mb-4 text-glow animate-pulse"></i>
+                            <div class="font-display text-xl text-brand-accent font-bold mb-2">Fotorrealismo Corporativo</div>
+                            <p class="text-xs text-brand-textMuted max-w-md">Iluminação de estúdio profissional e materiais de altíssima fidelidade: reflexos em metal escovado, texturas micro-abrasivas e materiais orgânicos.</p>
+                            <div class="mt-4 px-3 py-1 bg-brand-primary/10 border border-brand-primary/30 text-[10px] text-brand-primary font-mono rounded">100% CGI FINAL RENDERING</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Slider Handle bar -->
+                    <div id="slider-handle" class="absolute top-0 bottom-0 w-1 bg-brand-primary z-20 cursor-ew-resize flex items-center justify-center" style="left: 50%;">
+                        <div class="w-10 h-10 rounded-full bg-brand-primary text-brand-darker flex items-center justify-center shadow-neon-paprika transition-transform duration-100 hover:scale-110 active:scale-95">
+                            <i class="fa-solid fa-arrows-left-right text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6 text-xs text-brand-textMuted flex items-center justify-center gap-4">
+                    <span><i class="fa-solid fa-hand-pointer mr-2 text-brand-primary"></i> Use o mouse ou toque para arrastar</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Portfolio Showcase (Projects) Section -->
+        <section id="portfolio" class="py-24 bg-brand-dark border-t border-brand-darker">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                    <div>
+                        <div class="text-brand-primary font-display font-semibold text-sm tracking-widest uppercase mb-2">Galeria Curada</div>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-accent">
+                            Portfólio de Casos Reais
+                        </h2>
+                    </div>
+                    
+                    <!-- Portfolio Filter Navigation -->
+                    <div class="flex flex-wrap gap-2 mt-6 md:mt-0 max-w-full overflow-x-auto pb-2">
+                        <button onclick="filterPortfolio('all')" class="portfolio-filter-btn px-4 py-2 text-xs font-bold font-display uppercase tracking-wider rounded transition-all duration-300 bg-brand-primary text-brand-darker font-semibold shadow-neon-paprika" data-target="all">
+                            Todos
+                        </button>
+                        <button onclick="filterPortfolio('produto')" class="portfolio-filter-btn px-4 py-2 text-xs font-bold font-display uppercase tracking-wider rounded text-brand-textMuted hover:text-brand-accent hover:bg-brand-card transition-all duration-300" data-target="produto">
+                            Produto (CGI)
+                        </button>
+                        <button onclick="filterPortfolio('archviz')" class="portfolio-filter-btn px-4 py-2 text-xs font-bold font-display uppercase tracking-wider rounded text-brand-textMuted hover:text-brand-accent hover:bg-brand-card transition-all duration-300" data-target="archviz">
+                            ArchViz
+                        </button>
+                        <button onclick="filterPortfolio('animacao')" class="portfolio-filter-btn px-4 py-2 text-xs font-bold font-display uppercase tracking-wider rounded text-brand-textMuted hover:text-brand-accent hover:bg-brand-card transition-all duration-300" data-target="animacao">
+                            Animação / Tech
+                        </button>
+                        <button onclick="filterPortfolio('ia')" class="portfolio-filter-btn px-4 py-2 text-xs font-bold font-display uppercase tracking-wider rounded text-brand-textMuted hover:text-brand-accent hover:bg-brand-card transition-all duration-300" data-target="ia">
+                            AI Híbrido
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Philco Eletrodomésticos -->
+                    <div class="portfolio-card group bg-brand-card rounded-xl overflow-hidden border border-brand-darker transition-all duration-300 hover:-translate-y-2 hover:border-brand-primary" data-category="produto" onclick="openProjectModal('philco')">
+                        <div class="aspect-video w-full overflow-hidden bg-brand-dark relative">
+                            <!-- Image Mock placeholder (Stylized "Rustic Charm") -->
+                            <div class="w-full h-full bg-gradient-to-br from-brand-dark to-brand-darker flex flex-col justify-between p-6">
+                                <span class="px-2.5 py-1 rounded bg-brand-primary/20 border border-brand-primary/30 text-[10px] text-brand-primary font-bold tracking-wider uppercase self-start">PHILCO & BRITÂNIA</span>
+                                <div class="text-brand-accent">
+                                    <h4 class="font-display font-bold text-lg">Air Fryer Dual PFR3000PI</h4>
+                                    <p class="text-xs text-brand-textMuted">Fotorrealismo Industrial Avançado</p>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-brand-primary text-brand-darker flex items-center justify-center shadow-neon-paprika">
+                                    <i class="fa-solid fa-expand"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-brand-primary font-semibold tracking-wider uppercase">FOTORREALISMO DE PRODUTO</span>
+                            <h3 class="font-display font-bold text-xl text-brand-accent mt-1">Eletrodomésticos Premium</h3>
+                            <p class="text-xs text-brand-textMuted mt-2 leading-relaxed">Substituição da fotografia clássica por renders que simulam imperfeições microscópicas do vidro e metal.</p>
+                            <div class="mt-4 pt-4 border-t border-brand-darker flex items-center justify-between text-xs text-brand-textMuted">
+                                <span><i class="fa-solid fa-microchip mr-1 text-brand-primary"></i> 3ds Max / V-Ray</span>
+                                <span class="text-brand-primary font-medium">Ver detalhes <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: King Tony Tool -->
+                    <div class="portfolio-card group bg-brand-card rounded-xl overflow-hidden border border-brand-darker transition-all duration-300 hover:-translate-y-2 hover:border-brand-primary" data-category="produto" onclick="openProjectModal('kingtony')">
+                        <div class="aspect-video w-full overflow-hidden bg-brand-dark relative">
+                            <div class="w-full h-full bg-gradient-to-br from-brand-dark to-brand-darker flex flex-col justify-between p-6">
+                                <span class="px-2.5 py-1 rounded bg-brand-primary/20 border border-brand-primary/30 text-[10px] text-brand-primary font-bold tracking-wider uppercase self-start">KING TONY</span>
+                                <div class="text-brand-accent">
+                                    <h4 class="font-display font-bold text-lg">Air Impact Wrench</h4>
+                                    <p class="text-xs text-brand-textMuted">Modelagem Hard-Surface & Desgaste</p>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-brand-primary text-brand-darker flex items-center justify-center shadow-neon-paprika">
+                                    <i class="fa-solid fa-expand"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-brand-primary font-semibold tracking-wider uppercase">CGI INDUSTRIAL</span>
+                            <h3 class="font-display font-bold text-xl text-brand-accent mt-1">Ferramental de Performance</h3>
+                            <p class="text-xs text-brand-textMuted mt-2 leading-relaxed">Texturização realista com marcas de fundição de metal, graxa de maquinário e marcas de desgaste extremo.</p>
+                            <div class="mt-4 pt-4 border-t border-brand-darker flex items-center justify-between text-xs text-brand-textMuted">
+                                <span><i class="fa-solid fa-microchip mr-1 text-brand-primary"></i> Substance / Corona</span>
+                                <span class="text-brand-primary font-medium">Ver detalhes <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Mozak Timóteo -->
+                    <div class="portfolio-card group bg-brand-card rounded-xl overflow-hidden border border-brand-darker transition-all duration-300 hover:-translate-y-2 hover:border-brand-primary" data-category="archviz" onclick="openProjectModal('mozak')">
+                        <div class="aspect-video w-full overflow-hidden bg-brand-dark relative">
+                            <div class="w-full h-full bg-gradient-to-br from-brand-dark to-brand-darker flex flex-col justify-between p-6">
+                                <span class="px-2.5 py-1 rounded bg-brand-secondary/20 border border-brand-secondary/30 text-[10px] text-brand-darker font-bold tracking-wider uppercase self-start">MOZAK EMPREENDIMENTOS</span>
+                                <div class="text-brand-accent">
+                                    <h4 class="font-display font-bold text-lg">Jardim Botânico & Timóteo</h4>
+                                    <p class="text-xs text-brand-textMuted">ArchViz de Alto Padrão</p>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-brand-primary text-brand-darker flex items-center justify-center shadow-neon-paprika">
+                                    <i class="fa-solid fa-expand"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-brand-primary font-semibold tracking-wider uppercase">ARCHVIZ PREMIUM</span>
+                            <h3 class="font-display font-bold text-xl text-brand-accent mt-1">Timóteo Residencial</h3>
+                            <p class="text-xs text-brand-textMuted mt-2 leading-relaxed">Imagens residenciais com iluminação natural fidedigna (Golden Hour) e vegetação 3D ultrarrealista.</p>
+                            <div class="mt-4 pt-4 border-t border-brand-darker flex items-center justify-between text-xs text-brand-textMuted">
+                                <span><i class="fa-solid fa-microchip mr-1 text-brand-secondary"></i> Corona Renderer / Max</span>
+                                <span class="text-brand-primary font-medium">Ver detalhes <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Aeroespacial B2SPACE -->
+                    <div class="portfolio-card group bg-brand-card rounded-xl overflow-hidden border border-brand-darker transition-all duration-300 hover:-translate-y-2 hover:border-brand-primary" data-category="animacao" onclick="openProjectModal('b2space')">
+                        <div class="aspect-video w-full overflow-hidden bg-brand-dark relative">
+                            <div class="w-full h-full bg-gradient-to-br from-brand-dark to-brand-darker flex flex-col justify-between p-6">
+                                <span class="px-2.5 py-1 rounded bg-brand-primary/20 border border-brand-primary/30 text-[10px] text-brand-primary font-bold tracking-wider uppercase self-start">B2SPACE UK</span>
+                                <div class="text-brand-accent">
+                                    <h4 class="font-display font-bold text-lg">Hawk & Colibri Programme</h4>
+                                    <p class="text-xs text-brand-textMuted">Animação e Simulação Atmosférica</p>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-brand-primary text-brand-darker flex items-center justify-center shadow-neon-paprika">
+                                    <i class="fa-solid fa-expand"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-brand-primary font-semibold tracking-wider uppercase">SIMULAÇÃO & TECNOLOGIA</span>
+                            <h3 class="font-display font-bold text-xl text-brand-accent mt-1">Lançamento Aeroespacial</h3>
+                            <p class="text-xs text-brand-textMuted mt-2 leading-relaxed">Visualizações técnicas de altíssima fidelidade demonstrando lançamento de satélites em balões na estratosfera.</p>
+                            <div class="mt-4 pt-4 border-t border-brand-darker flex items-center justify-between text-xs text-brand-textMuted">
+                                <span><i class="fa-solid fa-microchip mr-1 text-brand-primary"></i> Maya / RealFlow / AE</span>
+                                <span class="text-brand-primary font-medium">Ver detalhes <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Boulevard 28 Offices -->
+                    <div class="portfolio-card group bg-brand-card rounded-xl overflow-hidden border border-brand-darker transition-all duration-300 hover:-translate-y-2 hover:border-brand-primary" data-category="archviz" onclick="openProjectModal('boulevard')">
+                        <div class="aspect-video w-full overflow-hidden bg-brand-dark relative">
+                            <div class="w-full h-full bg-gradient-to-br from-brand-dark to-brand-darker flex flex-col justify-between p-6">
+                                <span class="px-2.5 py-1 rounded bg-brand-secondary/20 border border-brand-secondary/30 text-[10px] text-brand-darker font-bold tracking-wider uppercase self-start">BOULEVARD 28 OFFICES</span>
+                                <div class="text-brand-accent">
+                                    <h4 class="font-display font-bold text-lg">Fachada Comercial & Clínicas</h4>
+                                    <p class="text-xs text-brand-textMuted">Projetos Corporativos Grandes</p>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-brand-primary text-brand-darker flex items-center justify-center shadow-neon-paprika">
+                                    <i class="fa-solid fa-expand"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-brand-primary font-semibold tracking-wider uppercase">ARCHVIZ COMERCIAL</span>
+                            <h3 class="font-display font-bold text-xl text-brand-accent mt-1">Boulevard 28</h3>
+                            <p class="text-xs text-brand-textMuted mt-2 leading-relaxed">Imagens de grande escala integrando cortinas de vidro espelhadas e iluminação artificial interna e de passagem.</p>
+                            <div class="mt-4 pt-4 border-t border-brand-darker flex items-center justify-between text-xs text-brand-textMuted">
+                                <span><i class="fa-solid fa-microchip mr-1 text-brand-secondary"></i> Corona / V-Ray</span>
+                                <span class="text-brand-primary font-medium">Ver detalhes <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: AI ControlNet Pipeline -->
+                    <div class="portfolio-card group bg-brand-card rounded-xl overflow-hidden border border-brand-darker transition-all duration-300 hover:-translate-y-2 hover:border-brand-primary" data-category="ia" onclick="openProjectModal('aipipeline')">
+                        <div class="aspect-video w-full overflow-hidden bg-brand-dark relative">
+                            <div class="w-full h-full bg-gradient-to-br from-brand-dark to-brand-darker flex flex-col justify-between p-6">
+                                <span class="px-2.5 py-1 rounded bg-brand-primary/20 border border-brand-primary/30 text-[10px] text-brand-accent font-bold tracking-wider uppercase self-start">RESEARCH & PIPELINE</span>
+                                <div class="text-brand-accent">
+                                    <h4 class="font-display font-bold text-lg">Stable Diffusion + ControlNet</h4>
+                                    <p class="text-xs text-brand-textMuted">Consistência Temporal de Câmera 3D</p>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div class="w-12 h-12 rounded-full bg-brand-primary text-brand-darker flex items-center justify-center shadow-neon-paprika">
+                                    <i class="fa-solid fa-expand"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-brand-primary font-semibold tracking-wider uppercase">PIPELINES HÍBRIDOS (IA)</span>
+                            <h3 class="font-display font-bold text-xl text-brand-accent mt-1">Concept Art Direcionado</h3>
+                            <p class="text-xs text-brand-textMuted mt-2 leading-relaxed">Geometrias 3D brutas servindo como mapas de profundidade para gerar animações estilizadas ultra-complexas.</p>
+                            <div class="mt-4 pt-4 border-t border-brand-darker flex items-center justify-between text-xs text-brand-textMuted">
+                                <span><i class="fa-solid fa-microchip mr-1 text-brand-primary"></i> SD / ControlNet / Blender</span>
+                                <span class="text-brand-primary font-medium">Ver detalhes <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Pipeline Visual Explanation Section -->
+        <section id="pipeline" class="py-24 bg-brand-darker relative overflow-hidden border-t border-brand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="text-brand-primary font-display font-semibold text-sm tracking-widest uppercase mb-2">Poder Tecnológico</div>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-accent">
+                        O Pipeline Híbrido: Do 3D Clássico para a IA
+                    </h2>
+                    <p class="text-brand-textMuted mt-4">
+                        A IA corporativa de verdade exige controle milimétrico. Abaixo está o pipeline que desenvolvi para entregar velocidade criativa sem perder a precisão mecânica, o posicionamento de câmera e a consistência.
+                    </p>
+                </div>
+
+                <!-- Custom Flow Chart / Diagram UI -->
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 relative">
+                    <!-- Connector line overlay for desktop -->
+                    <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent -translate-y-6 z-0"></div>
+                    
+                    <!-- Step 1 -->
+                    <div class="bg-brand-card p-6 rounded-xl border border-brand-dark relative z-10 hover:border-brand-primary transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-brand-primary/10 border border-brand-primary/30 text-brand-primary flex items-center justify-center font-display font-bold text-lg mb-4">01</div>
+                        <h4 class="font-display font-bold text-brand-accent text-base">Greybox / Blocking 3D</h4>
+                        <p class="text-xs text-brand-textMuted mt-2 leading-relaxed">Modelagem básica das geometrias e posicionamento de câmera no 3ds Max/Blender, definindo volumes e vetores de movimento físicos reais.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-brand-card p-6 rounded-xl border border-brand-dark relative z-10 hover:border-brand-primary transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-brand-primary/10 border border-brand-primary/30 text-brand-primary flex items-center justify-center font-display font-bold text-lg mb-4">02</div>
+                        <h4 class="font-display font-bold text-brand-accent text-base">Passagem de Mapas (ControlNet)</h4>
+                        <p class="text-xs text-brand-textMuted mt-2 leading-relaxed">Extração de mapas de profundidade (Depth), canais normais (Normals) e linhas estruturais (Canny) a partir do motor de render clássico.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-brand-card p-6 rounded-xl border border-brand-dark relative z-10 hover:border-brand-primary transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-brand-primary/10 border border-brand-primary/30 text-brand-primary flex items-center justify-center font-display font-bold text-lg mb-4">03</div>
+                        <h4 class="font-display font-bold text-brand-accent text-base">Difusão de Estilos & IA</h4>
+                        <p class="text-xs text-brand-textMuted mt-2 leading-relaxed">Os mapas 3D guiam o Stable Diffusion em tempo real. Isso bloqueia distorções geradas pela IA e garante que a câmera se mova de forma exata.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-brand-card p-6 rounded-xl border border-brand-dark relative z-10 hover:border-brand-accent transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-brand-accent/10 border border-brand-accent/30 text-brand-accent flex items-center justify-center font-display font-bold text-lg mb-4">04</div>
+                        <h4 class="font-display font-bold text-brand-accent text-base">Composição & Finalização</h4>
+                        <p class="text-xs text-brand-textMuted mt-2 leading-relaxed">Pós-produção avançada no After Effects com masks e filtros tradicionais, unindo o peso clássico da edição com a textura ultra-complexa da IA.</p>
+                    </div>
+                </div>
+
+                <div class="mt-16 bg-gradient-to-r from-brand-primary/10 to-brand-dark/10 p-8 rounded-2xl border border-brand-primary/20 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
+                    <div class="text-brand-primary text-4xl shrink-0">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-brand-accent text-lg">Benefício Logístico para Grandes Marcas</h4>
+                        <p class="text-sm text-brand-textMuted mt-1 leading-relaxed">
+                            Ao acoplar IA a volumes 3D matemáticos, conseguimos criar dezenas de variações de um produto ou ambiente em minutos, reduzindo tempo de renders tradicionais caríssimos e custos operacionais de marketing de produtos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Conversion Section -->
+        <section id="contato" class="py-24 bg-brand-dark border-t border-brand-darker">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Left: Contact info -->
+                    <div class="lg:col-span-5">
+                        <div class="text-brand-primary font-display font-semibold text-sm tracking-widest uppercase mb-2">Fale Comigo</div>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-accent mb-6">
+                            Pronto para elevar o nível visual da sua empresa?
+                        </h2>
+                        <p class="text-brand-textMuted leading-relaxed mb-8">
+                            Seja para renderização fotorrealista de produtos, campanhas de ArchViz, animações complexas ou criação de conceitos hiper-detalhados com ferramentas de IA, estou disponível para projetos corporativos de alto nível e posições estratégicas.
+                        </p>
+
+                        <!-- Contact channels -->
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded bg-brand-card flex items-center justify-center text-brand-primary border border-brand-darker">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-brand-textMuted uppercase">E-mail Comercial</div>
+                                    <a href="mailto:robson.silva@rfsrio.com" class="text-brand-accent hover:text-brand-primary font-medium">robson.silva@rfsrio.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded bg-brand-card flex items-center justify-center text-brand-primary border border-brand-darker">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-brand-textMuted uppercase">Perfil no LinkedIn</div>
+                                    <a href="https://linkedin.com/in/rfsrio" target="_blank" class="text-brand-accent hover:text-brand-primary font-medium">linkedin.com/in/rfsrio</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded bg-brand-card flex items-center justify-center text-brand-primary border border-brand-darker">
+                                    <i class="fab fa-artstation"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-brand-textMuted uppercase">Galeria ArtStation</div>
+                                    <a href="https://rfsrio.artstation.com" target="_blank" class="text-brand-accent hover:text-brand-primary font-medium">artstation.com/rfsrio</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact Form Layout -->
+                    <div class="lg:col-span-7 bg-brand-card/50 p-8 rounded-2xl border border-brand-dark relative">
+                        <h3 class="font-display font-bold text-xl text-brand-accent mb-6">Mande um Breve Briefing</h3>
+                        
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-brand-secondary mb-2">Seu Nome *</label>
+                                    <input type="text" required class="w-full bg-brand-darker border border-brand-dark rounded-lg px-4 py-3 text-brand-accent focus:outline-none focus:border-brand-primary" placeholder="Ex: Roberto Alencar">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-brand-secondary mb-2">Sua Empresa / Marca *</label>
+                                    <input type="text" required class="w-full bg-brand-darker border border-brand-dark rounded-lg px-4 py-3 text-brand-accent focus:outline-none focus:border-brand-primary" placeholder="Ex: Philco SA">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-brand-secondary mb-2">E-mail corporativo *</label>
+                                <input type="email" required class="w-full bg-brand-darker border border-brand-dark rounded-lg px-4 py-3 text-brand-accent focus:outline-none focus:border-brand-primary" placeholder="Ex: nome@empresa.com">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-brand-secondary mb-2">Qual é o tipo do seu projeto?</label>
+                                <select class="w-full bg-brand-darker border border-brand-dark rounded-lg px-4 py-3 text-brand-accent focus:outline-none focus:border-brand-primary">
+                                    <option value="produto">CGI de Produto / Fotorrealismo Comercial</option>
+                                    <option value="archviz">Visualização Arquitetônica (ArchViz)</option>
+                                    <option value="animacao">Animação 3D & Simulação Técnica</option>
+                                    <option value="ia">Pipeline Híbrido com IA</option>
+                                    <option value="outro">Outro tipo de parceria corporativa</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-brand-secondary mb-2">Conte um pouco do seu projeto *</label>
+                                <textarea required rows="4" class="w-full bg-brand-darker border border-brand-dark rounded-lg px-4 py-3 text-brand-accent focus:outline-none focus:border-brand-primary" placeholder="Conte brevemente sobre as imagens, prazos ou necessidades da sua marca..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 text-sm font-bold font-display uppercase tracking-wider text-brand-darker bg-brand-primary rounded-lg hover:bg-white hover:text-brand-darker hover:shadow-neon-paprika transition-all duration-300">
+                                Enviar Mensagem para Robson
+                            </button>
+                        </form>
+
+                        <!-- Notification Box (replaces standard alerts) -->
+                        <div id="form-success-box" class="hidden absolute inset-0 bg-brand-card rounded-2xl flex flex-col items-center justify-center text-center p-8 transition-all duration-300">
+                            <div class="w-16 h-16 rounded-full bg-brand-primary/10 text-brand-primary border border-brand-primary/30 flex items-center justify-center text-2xl mb-4 shadow-neon-paprika/20 animate-bounce">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </div>
+                            <h4 class="font-display font-bold text-2xl text-brand-accent mb-2">Muito Obrigado!</h4>
+                            <p class="text-sm text-brand-textMuted max-w-sm mb-6">Mensagem simulada enviada com sucesso! Robson responderá ao seu contato comercial o mais breve possível.</p>
+                            <button onclick="resetContactForm()" class="px-6 py-2 border border-brand-dark text-xs font-bold uppercase tracking-wider rounded text-brand-secondary hover:text-brand-accent transition-colors">
+                                Voltar ao formulário
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-brand-darker border-t border-brand-dark py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-2">
+                <span class="font-display font-bold text-lg tracking-tight text-brand-accent">
+                    ROBSON<span class="text-brand-primary">.SILVA</span>
+                </span>
+                <span class="text-xs text-brand-textMuted">| Robson Silva 2026. Todos os direitos reservados.</span>
+            </div>
+            
+            <div class="flex items-center space-x-6 text-sm">
+                <a href="https://linkedin.com/in/rfsrio" target="_blank" class="text-brand-textMuted hover:text-brand-primary transition-colors"><i class="fab fa-linkedin mr-1"></i> LinkedIn</a>
+                <a href="https://rfsrio.artstation.com" target="_blank" class="text-brand-textMuted hover:text-brand-primary transition-colors"><i class="fab fa-artstation mr-1"></i> ArtStation</a>
+                <a href="#hero" class="text-brand-textMuted hover:text-brand-primary transition-colors"><i class="fa-solid fa-arrow-up mr-1"></i> Topo</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Project Modal Layout -->
+    <div id="project-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-brand-darker/90 backdrop-blur-sm transition-opacity" onclick="closeProjectModal()"></div>
+            
+            <!-- Centered Modal Content -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-brand-card rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full border border-brand-dark">
+                
+                <!-- Close Button -->
+                <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-brand-secondary hover:text-brand-accent z-10 p-2 bg-brand-darker rounded-full transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+
+                <!-- Dynamic Modal Content Area -->
+                <div id="modal-content-area" class="p-6 sm:p-8">
+                    <!-- Loaded via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Application Logic -->
+    <script>
+        // Data for Project Modals
+        const projectData = {
+            philco: {
+                title: "Linha de Eletrodomésticos Premium (Philco & Britânia)",
+                category: "Visualização de Produto (Fotorrealismo)",
+                headline: "Substituição completa de estúdio de fotografia real por pipelines 3D de alta precisão.",
+                desc: "Renders e animações de alta fidelidade técnica desenvolvidos para campanhas de produtos como o Forno Elétrico Philco PFE65IE e a Caixa Extreme PCX6700. O principal desafio superado foi a simulação precisa de materiais procedurais microscópicos, como plástico injetado semi-translúcido, aço escovado e a curvatura óptica do vidro triplo do forno.",
+                results: "Eliminação total do custo logístico de prototipagem física para o estúdio de marketing da Philco/Britânia. O material de marketing foi finalizado antes mesmo do produto sair da linha de montagem física.",
+                stack: "3ds Max, Corona Renderer, Photoshop, After Effects",
+                image: "https://placehold.co/1200x675/252422/eb5228?text=Philco+Products+CGI+Showcase"
+            },
+            kingtony: {
+                title: "Ferramental Industrial King Tony",
+                category: "CGI Hard-Surface de Alta Performance",
+                headline: "Texturização com marcas reais de desgaste industrial metálico.",
+                desc: "Modelagem robusta e detalhamento extremo de materiais mecânicos pesados. Foco em simular imperfeições autênticas: graxa endurecida, marcas de fundição irregular e sulcos de desgaste decorrente de alto torque industrial no metal cromado.",
+                results: "Imagens promocionais de alta conversão usadas em peças impressas de catálogo industrial na América Latina, gerando alto senso de resistência e valor de engenharia.",
+                stack: "3ds Max, V-Ray, Substance Painter, Photoshop",
+                image: "https://placehold.co/1200x675/403d39/eb5228?text=King+Tony+Heavy+Metal+CGI"
+            },
+            mozak: {
+                title: "Empreendimentos Residenciais (Mozak)",
+                category: "Arquitetura & ArchViz Premium",
+                headline: "Traduzindo localizações de desejo do Rio de Janeiro em espaços hiper-realistas.",
+                desc: "Imagens 3D internas e externas de altíssima escala para empreendimentos na zona sul do Rio de Janeiro, com foco na luz atmosférica e vegetação tropical fidedigna. Composição voltada a gerar o sentimento de bem-estar urbano sofisticado.",
+                results: "Atendimento imediato a equipes comerciais de corretores com renders que aceleraram a pré-venda do empreendimento no Jardim Botânico.",
+                stack: "3ds Max, Corona Renderer, Forest Pack, Photoshop",
+                image: "https://placehold.co/1200x675/252422/ccc5b9?text=Mozak+Timoteo+ArchViz+Showcase"
+            },
+            b2space: {
+                title: "Programa Hawk & Colibri (B2SPACE UK)",
+                category: "Simulação e Animação Aeroespacial",
+                headline: "Demonstração tecnológica de dinâmicas físicas complexas.",
+                desc: "Animação 3D mecânica para apresentação internacional do sistema de lançamento de microssatélites a partir de balões atmosféricos em alta altitude. Simulação rigorosa de tecidos (expansão do balão de gás no vácuo estratosférico) e iluminação fiel à curvatura física da Terra.",
+                results: "Vídeos institucionais usados por engenheiros da B2SPACE para captação e validação de investidores e agências aeroespaciais.",
+                stack: "3ds Max, Maya, RealFlow, After Effects",
+                image: "https://placehold.co/1200x675/403d39/ccc5b9?text=B2SPACE+Aerospace+Animation"
+            },
+            boulevard: {
+                title: "Complexos Comerciais Boulevard 28 Offices",
+                category: "ArchViz de Grande Porte",
+                headline: "Controle de iluminação em grandes superfícies de vidro e layouts urbanos.",
+                desc: "Fachadas comerciais complexas integradas a clínicas médicas de ponta. O desenvolvimento exigiu o controle de múltiplos canais de luz artificial (LightMix) e reflexos calibrados nas peles de vidro que recobrem a estrutura arquitetônica.",
+                results: "Imagens promocionais que garantiram a locação antecipada do pavilhão de clínicas e escritórios do empreendimento.",
+                stack: "3ds Max, V-Ray, Corona Renderer, Photoshop",
+                image: "https://placehold.co/1200x675/252422/ccc5b9?text=Boulevard+28+Offices+Architecture"
+            },
+            aipipeline: {
+                title: "Pipelines Híbridos de Consistência AI",
+                category: "Inovação Tecnológica de Movimento",
+                headline: "Unindo a engenharia 3D à velocidade estilística da IA generativa.",
+                desc: "Pesquisa aplicada usando mapas de profundidade (Depth Maps) e caminhos ópticos do 3D clássico para guiar e 'domar' modelos generativos de IA, como Stable Diffusion e Runway. Isso garante consistência temporal nas animações e elimina o flicker (tremulação de pixels) que afeta produções de IA comuns.",
+                results: "Criação de vídeos promocionais estilizados ultra-rápidos mantendo a geometria do produto ou ambiente intocada, um diferencial que atrai marcas modernas de publicidade.",
+                stack: "Stable Diffusion, ControlNet, Blender, After Effects",
+                image: "https://placehold.co/1200x675/252422/eb5228?text=AI+Pipeline+Temporal+Consistency"
+            }
+        };
+
+        // Mobile Navigation Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Portfolio filtering function
+        function filterPortfolio(category) {
+            // Update filter buttons styling
+            const buttons = document.querySelectorAll('.portfolio-filter-btn');
+            buttons.forEach(btn => {
+                const target = btn.getAttribute('data-target');
+                if (target === category) {
+                    btn.className = "portfolio-filter-btn px-4 py-2 text-xs font-bold font-display uppercase tracking-wider rounded bg-brand-primary text-brand-darker font-semibold shadow-neon-paprika transition-all duration-300";
+                } else {
+                    btn.className = "portfolio-filter-btn px-4 py-2 text-xs font-bold font-display uppercase tracking-wider rounded text-brand-textMuted hover:text-brand-accent hover:bg-brand-card transition-all duration-300";
+                }
+            });
+
+            // Show/Hide relevant items
+            const cards = document.querySelectorAll('.portfolio-card');
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+        }
+
+        // --- CORREÇÃO TÉCNICA E SINCRONIZAÇÃO DO SLIDER ANTES/DEPOIS ---
+        const showcaseContainer = document.getElementById('showcase-container');
+        const sliderTopLayer = document.getElementById('slider-top-layer');
+        const topLayerInner = document.getElementById('top-layer-inner');
+        const sliderHandle = document.getElementById('slider-handle');
+
+        // Sincroniza a largura do conteúdo interno para corresponder sempre à largura total do container
+        function syncSliderWidth() {
+            if (showcaseContainer && topLayerInner) {
+                const rect = showcaseContainer.getBoundingClientRect();
+                topLayerInner.style.width = `${rect.width}px`;
+            }
+        }
+
+        function moveSlider(clientX) {
+            const rect = showcaseContainer.getBoundingClientRect();
+            let position = ((clientX - rect.left) / rect.width) * 100;
+            
+            // Limita a posição entre 0% e 100%
+            if (position < 0) position = 0;
+            if (position > 100) position = 100;
+            
+            sliderTopLayer.style.width = `${position}%`;
+            sliderHandle.style.left = `${position}%`;
+        }
+
+        let isDragging = false;
+
+        // Mouse events
+        sliderHandle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            e.preventDefault();
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            moveSlider(e.clientX);
+        });
+
+        // Touch events para mobile
+        sliderHandle.addEventListener('touchstart', (e) => {
+            isDragging = true;
+        });
+
+        window.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            if (e.touches && e.touches[0]) {
+                moveSlider(e.touches[0].clientX);
+            }
+        });
+
+        // Modal functions
+        function openProjectModal(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+
+            const modal = document.getElementById('project-modal');
+            const contentArea = document.getElementById('modal-content-area');
+
+            // Set modal HTML structure matching Rustic theme
+            contentArea.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <div class="aspect-video rounded-xl overflow-hidden border border-brand-dark bg-brand-darker mb-4">
+                            <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 bg-brand-darker rounded-xl border border-brand-dark">
+                            <h5 class="text-xs font-semibold text-brand-secondary uppercase tracking-wider mb-2">Pilha de Tecnologias Utilizada</h5>
+                            <div class="flex flex-wrap gap-2">
+                                ${project.stack.split(', ').map(tech => `<span class="px-3 py-1 bg-brand-dark rounded text-xs text-brand-primary font-mono border border-brand-darker">${tech}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <span class="px-2.5 py-1 rounded bg-brand-primary/20 border border-brand-primary/30 text-[10px] text-brand-primary font-bold tracking-wider uppercase">${project.category}</span>
+                        <h3 class="font-display font-bold text-2xl text-brand-accent mt-2">${project.title}</h3>
+                        <p class="text-sm text-brand-primary font-display font-medium leading-snug">${project.headline}</p>
+                        
+                        <div class="space-y-3">
+                            <h4 class="text-xs font-semibold uppercase tracking-wider text-brand-secondary">Sobre o Projeto</h4>
+                            <p class="text-xs sm:text-sm text-brand-textMuted leading-relaxed">${project.desc}</p>
+                        </div>
+
+                        <div class="p-4 bg-gradient-to-r from-brand-primary/10 to-transparent rounded-xl border-l-2 border-brand-primary">
+                            <h4 class="text-xs font-semibold uppercase tracking-wider text-brand-accent">Resultado para o Cliente</h4>
+                            <p class="text-xs sm:text-sm text-brand-textMuted mt-1 leading-relaxed">${project.results}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Display modal
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Enable background scrolling
+        }
+
+        // Interactive Canvas Particle Animation
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particlesArray = [];
+        const numberOfParticles = 65;
+
+        // Resize Canvas dynamically
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            createParticles();
+            syncSliderWidth(); // Sincroniza a largura do slider no carregamento/redimensionamento
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = (Math.random() - 0.5) * 0.35;
+                this.speedY = (Math.random() - 0.5) * 0.35;
+                this.color = Math.random() > 0.4 ? '#EB5228' : '#CCC5B9';
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function createParticles() {
+            particlesArray = [];
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function connectParticles() {
+            let maxDistance = 125;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let dx = particlesArray[a].x - particlesArray[b].x;
+                    let dy = particlesArray[a].y - particlesArray[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < maxDistance) {
+                        let opacity = 1 - (distance / maxDistance);
+                        ctx.strokeStyle = `rgba(235, 82, 40, ${opacity * 0.12})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            connectParticles();
+            requestAnimationFrame(animateParticles);
+        }
+
+        // Contact Form Handlers
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successBox = document.getElementById('form-success-box');
+            successBox.classList.remove('hidden');
+        }
+
+        function resetContactForm() {
+            const form = document.getElementById('contact-form');
+            const successBox = document.getElementById('form-success-box');
+            form.reset();
+            successBox.classList.add('hidden');
+        }
+
+        // Inicialização de scripts
+        window.onload = function() {
+            initCanvas();
+            animateParticles();
+            syncSliderWidth();
+        };
+
+        window.addEventListener('resize', () => {
+            initCanvas();
+            syncSliderWidth();
+        });
+    </script>
+</body>
+</html>
